@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Instagram!",
+  "version": "0.1",
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'",
+  "description": "Instagram extension",
+  "permissions": [
+    "https://*.instagram.com/p/*",
+    "downloads"
+  ],
+  "content_scripts": [
+    {
+      "matches":  ["https://*.instagram.com/p/*"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  }
+}
